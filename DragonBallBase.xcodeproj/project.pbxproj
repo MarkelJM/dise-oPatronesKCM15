@@ -21,6 +21,16 @@
 		D37A723C2975EF7F001923BA /* HeroesListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A723B2975EF7F001923BA /* HeroesListTableViewDataSource.swift */; };
 		D37A723E2975F761001923BA /* HeroListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A723D2975F761001923BA /* HeroListViewCell.swift */; };
 		D37A72412975FE8B001923BA /* HeroListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A72402975FE8B001923BA /* HeroListViewModel.swift */; };
+		D3E372782977228C00B4D4D0 /* HeroesListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E372772977228C00B4D4D0 /* HeroesListTableViewDelegate.swift */; };
+		D3E3727B297725A000B4D4D0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D3E3727A297725A000B4D4D0 /* Kingfisher */; };
+		D3E3728229772BF600B4D4D0 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3728129772BF600B4D4D0 /* HeroDetailView.swift */; };
+		D3E3728429772C1A00B4D4D0 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3728329772C1A00B4D4D0 /* HeroDetailViewController.swift */; };
+		D3E372862977393B00B4D4D0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E372852977393B00B4D4D0 /* LoginViewController.swift */; };
+		D3E372892977402A00B4D4D0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E372882977402A00B4D4D0 /* View.swift */; };
+		D3E3728B2977403500B4D4D0 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3728A2977403500B4D4D0 /* Interactor.swift */; };
+		D3E3728D2977404000B4D4D0 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3728C2977404000B4D4D0 /* Presenter.swift */; };
+		D3E3728F2977404C00B4D4D0 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3728E2977404C00B4D4D0 /* Entity.swift */; };
+		D3E372912977405600B4D4D0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E372902977405600B4D4D0 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +50,15 @@
 		D37A723B2975EF7F001923BA /* HeroesListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListTableViewDataSource.swift; sourceTree = "<group>"; };
 		D37A723D2975F761001923BA /* HeroListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewCell.swift; sourceTree = "<group>"; };
 		D37A72402975FE8B001923BA /* HeroListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewModel.swift; sourceTree = "<group>"; };
+		D3E372772977228C00B4D4D0 /* HeroesListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListTableViewDelegate.swift; sourceTree = "<group>"; };
+		D3E3728129772BF600B4D4D0 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
+		D3E3728329772C1A00B4D4D0 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		D3E372852977393B00B4D4D0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D3E372882977402A00B4D4D0 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D3E3728A2977403500B4D4D0 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		D3E3728C2977404000B4D4D0 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		D3E3728E2977404C00B4D4D0 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		D3E372902977405600B4D4D0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E3727B297725A000B4D4D0 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,10 +92,12 @@
 		5D78B98F2970857C00274846 /* DragonBallBase */ = {
 			isa = PBXGroup;
 			children = (
+				D3E372872977400200B4D4D0 /* VIPER */,
 				D37A723F2975FE67001923BA /* MVVM */,
 				5D78B9A6297088B300274846 /* Utils */,
 				5D78B9A52970888700274846 /* HeroesList */,
 				5D78B9A42970887000274846 /* HeroDetail */,
+				D3E372852977393B00B4D4D0 /* LoginViewController.swift */,
 				5D78B9902970857C00274846 /* AppDelegate.swift */,
 				5D78B9922970857C00274846 /* SceneDelegate.swift */,
 				5D78B9942970857C00274846 /* ViewController.swift */,
@@ -90,6 +112,9 @@
 		5D78B9A42970887000274846 /* HeroDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D3E3727E29772B8800B4D4D0 /* Model */,
+				D3E3727D29772B8100B4D4D0 /* View */,
+				D3E3727C29772B7800B4D4D0 /* Controller */,
 			);
 			path = HeroDetail;
 			sourceTree = "<group>";
@@ -135,6 +160,7 @@
 			children = (
 				D37A72392975DB49001923BA /* HeroesListViewController.swift */,
 				D37A723B2975EF7F001923BA /* HeroesListTableViewDataSource.swift */,
+				D3E372772977228C00B4D4D0 /* HeroesListTableViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +171,41 @@
 				D37A72402975FE8B001923BA /* HeroListViewModel.swift */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		D3E3727C29772B7800B4D4D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3E3728329772C1A00B4D4D0 /* HeroDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3E3727D29772B8100B4D4D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3E3728129772BF600B4D4D0 /* HeroDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3E3727E29772B8800B4D4D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3E372872977400200B4D4D0 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				D3E372882977402A00B4D4D0 /* View.swift */,
+				D3E3728A2977403500B4D4D0 /* Interactor.swift */,
+				D3E3728C2977404000B4D4D0 /* Presenter.swift */,
+				D3E3728E2977404C00B4D4D0 /* Entity.swift */,
+				D3E372902977405600B4D4D0 /* Router.swift */,
+			);
+			path = VIPER;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +224,9 @@
 			dependencies = (
 			);
 			name = DragonBallBase;
+			packageProductDependencies = (
+				D3E3727A297725A000B4D4D0 /* Kingfisher */,
+			);
 			productName = DragonBallBase;
 			productReference = 5D78B98D2970857C00274846 /* DragonBallBase.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 5D78B9842970857B00274846;
+			packageReferences = (
+				D3E37279297725A000B4D4D0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 5D78B98E2970857C00274846 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -218,15 +285,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E3728D2977404000B4D4D0 /* Presenter.swift in Sources */,
+				D3E372892977402A00B4D4D0 /* View.swift in Sources */,
 				5D78B9952970857C00274846 /* ViewController.swift in Sources */,
 				5D78B9912970857C00274846 /* AppDelegate.swift in Sources */,
 				D37A72412975FE8B001923BA /* HeroListViewModel.swift in Sources */,
+				D3E372862977393B00B4D4D0 /* LoginViewController.swift in Sources */,
 				D37A723E2975F761001923BA /* HeroListViewCell.swift in Sources */,
 				D37A723A2975DB49001923BA /* HeroesListViewController.swift in Sources */,
 				5D78B9932970857C00274846 /* SceneDelegate.swift in Sources */,
 				D37A723C2975EF7F001923BA /* HeroesListTableViewDataSource.swift in Sources */,
 				5D78B9A8297088C100274846 /* Constants.swift in Sources */,
+				D3E372782977228C00B4D4D0 /* HeroesListTableViewDelegate.swift in Sources */,
+				D3E372912977405600B4D4D0 /* Router.swift in Sources */,
+				D3E3728429772C1A00B4D4D0 /* HeroDetailViewController.swift in Sources */,
+				D3E3728B2977403500B4D4D0 /* Interactor.swift in Sources */,
+				D3E3728229772BF600B4D4D0 /* HeroDetailView.swift in Sources */,
 				5D78B9AD2970895600274846 /* ApiClient.swift in Sources */,
+				D3E3728F2977404C00B4D4D0 /* Entity.swift in Sources */,
 				5D78B9AF2970897600274846 /* HeroModel.swift in Sources */,
 				D37A72362975D5CB001923BA /* HeroesListView.swift in Sources */,
 			);
@@ -444,6 +520,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3E37279297725A000B4D4D0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3E3727A297725A000B4D4D0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3E37279297725A000B4D4D0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D78B9852970857C00274846 /* Project object */;
 }

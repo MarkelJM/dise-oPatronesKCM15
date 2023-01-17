@@ -26,4 +26,8 @@ class HeroListViewModel: NSObject{
         
     }
     
+    func login(){
+        
+    }
+    
 }

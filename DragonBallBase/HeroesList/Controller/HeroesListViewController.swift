@@ -15,14 +15,18 @@ class HeroesListViewController : UIViewController {
     var viewModel : HeroListViewModel?
     
     var tableViewDataSource: HeroesListTableViewDataSource?
+    var tableViewDelegate : HeroesListTableViewDelegate?
     
     override func loadView(){
         
         view = HeroesListView()
         
         tableViewDataSource = HeroesListTableViewDataSource(tableView: mainView.heroesTableView)
-        
         mainView.heroesTableView.dataSource = tableViewDataSource
+        
+        
+        tableViewDelegate = HeroesListTableViewDelegate()
+        mainView.heroesTableView.delegate = tableViewDelegate       
         
         
     }
@@ -35,21 +39,41 @@ class HeroesListViewController : UIViewController {
             self?.heroes = heroes
             self?.tableViewDataSource?.heroes = heroes
         }
-        /* traer los datos: CALL API TO GET HERO LIST*/
-        viewModel?.fetchData()
-    }
-    
-    /*func fetchData(){
         
-        let myToken = "eyJhbGciOiJIUzI1NiIsImtpZCI6InByaXZhdGUiLCJ0eXAiOiJKV1QifQ.eyJpZGVudGlmeSI6IkUzNkM5REU4LUIxQ0QtNDM5NS04MkJGLTVFNTU3RThDQTRENyIsImVtYWlsIjoibWFya2p1YXJpc3RpQGdtYWlsLmNvbSIsImV4cGlyYXRpb24iOjY0MDkyMjExMjAwfQ.5-qOCbTIIllJry65kp0PKpI9CNDaAhUApD6xo7QyBOc"
+        setUpUpdateUI()
+        getData()
+        setUpTableDelegate()
         
-        let apiClient = ApiClient(token: myToken)
-        apiClient.getHeroes{[weak self] heroes, error in
-            //debugPrint("PMG: \(heroes)")
-            //debugPrint("PMG: ", error ??  "")
-            self?.heroes = heroes
-            self?.tableViewDataSource?.heroes = heroes
+       
+            
         }
         
-    }*/
+        func setUpUpdateUI(){
+            
+        }
+        
+        func getData(){
+            /* traer los datos: CALL API TO GET HERO LIST*/
+            viewModel?.fetchData()
+        }
+    
+        func setUpTableDelegate(){
+            tableViewDelegate?.didTapOnCell = { [weak self] index in
+                guard let datasource = self?.tableViewDataSource else {
+                    return
+                }
+                //Get the hero in the hero list according to thew position index
+                let hero =  datasource.heroes[index]
+                
+                // prepare the viewcontroller that I want to present
+                let heroDetailViewController = HeroDetailViewController(heroDetailModel: hero)
+                
+                //present the controller to show the details
+                
+                self?.present(heroDetailViewController,animated: true)
+                
+            }
+    }
+    
+   
 }

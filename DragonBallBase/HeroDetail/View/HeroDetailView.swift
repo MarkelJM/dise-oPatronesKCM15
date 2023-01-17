@@ -1,15 +1,14 @@
 //
-//  HeroListViewCell.swift
+//  HeroDetailView.swift
 //  DragonBallBase
 //
-//  Created by Markel Juaristi on 16/1/23.
+//  Created by Markel Juaristi on 17/1/23.
 //
 
 import Foundation
 import UIKit
-import Kingfisher
 
-class HeroListViewCell : UITableViewCell {
+class HeroDetailView : UIView {
     
     let photoImageView =  {
         let imageView = UIImageView()
@@ -38,22 +37,21 @@ class HeroListViewCell : UITableViewCell {
         return label
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setUpViews()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpViews() {
+    func setUpView(){
         
+        backgroundColor = .white
         addSubview(photoImageView)
-        addSubview(nameLabel)
-        addSubview(descriptionLabel)
+        //addSubview(nameLabel)
+        //addSubview(descriptionLabel)
         
         NSLayoutConstraint.activate([
             
@@ -61,7 +59,7 @@ class HeroListViewCell : UITableViewCell {
             photoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             photoImageView.heightAnchor.constraint(equalToConstant: 80),
             photoImageView.widthAnchor.constraint(equalToConstant: 80),
-            
+            /*
             nameLabel.topAnchor.constraint(equalTo: photoImageView.topAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant:  20),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
@@ -72,13 +70,15 @@ class HeroListViewCell : UITableViewCell {
             descriptionLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor ),
             descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             descriptionLabel.heightAnchor.constraint(equalToConstant: 50),
-         
+             */
             
             
             
         
         ])
+        
     }
+    
     func configure(_ model: HeroModel) {
         
         /*para alimentar los label etc*/
@@ -87,4 +87,5 @@ class HeroListViewCell : UITableViewCell {
         self.photoImageView.kf.setImage(with: URL(string: model.photo) )
     }
 
+    
 }
