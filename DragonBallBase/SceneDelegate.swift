@@ -21,14 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          
          CONFIGURACION VIPER
          let heroEntry = HeroRouter.start()
+         
+         let initialVC = heroEntry.entry
+         
+         let window = UIWindow(windowScene: windowScene)
+         window.rootViewController = initialVC
+         
+         self.window = window
+         window.makeKeyAndVisible()*/
         
-        let initialVC = heroEntry.entry
-        
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = initialVC
-        
-        self.window = window
-        window.makeKeyAndVisible()*/
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

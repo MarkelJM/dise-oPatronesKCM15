@@ -1,0 +1,109 @@
+//
+//  LoginViewController.swift
+//  DragonBallBase
+//
+//  Created by Markel Juaristi on 19/1/23.
+//
+
+import Foundation
+import UIKit
+/*
+class LoginViewController : UIViewController {
+    
+    @objc
+    func didLoginTapped(sender: UIButton) {
+        
+        //Capturar los valores de texto introducidos en para el email y la password
+        
+        
+        //Call view model to perform the login call with the apiClient
+    }
+}
+*/
+class LoginViewController: UIViewController {
+    var mainView: LoginView {self.view as! LoginView}
+    
+    var loginButton : UIButton?
+    var emailTextfield : UITextField?
+    var passwordTextfield : UITextField?
+    var loggedMessage: UILabel?
+    
+    var viewModel: LoginViewModel?
+    
+    override func loadView() {
+        let loginView = LoginView()
+        
+        loginButton = loginView.getLoginButtonView()
+        emailTextfield = loginView.getEmailView()
+        passwordTextfield = loginView.getPasswordView()
+        loggedMessage = loginView.getLoggedMessage()
+        
+        loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
+        
+        view = loginView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel = LoginViewModel()
+        
+        loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
+    }
+    
+   
+    
+    
+
+    @objc
+    func didLoginTapped(sender: UIButton) {
+        
+        // 1.- Capturar los valores de texto introducidos en para el email y la password
+        /*
+        guard let emailUser = emailTextfield?.text, !emailUser.isEmpty else {
+            // mostrar un error
+            print("\(emailTˇextfield) is not correct")
+            return
+        }
+        guard let passwordUser = passwordTextfield?.text, !passwordUser.isEmpty else {
+            // show error
+            print("\(passwordTextfield) is not correct")
+            return
+        }
+         */
+        
+        guard let user = emailTextfield?.text else {
+            print("Email field is required")
+            return
+        }
+        guard let password = passwordTextfield?.text else {
+            print("Password field is required")
+            return
+        }
+        
+        // 2.- Call view model to perform the login call with the apiClient
+        
+        viewModel?.updateUI = {[weak self] token, error in
+            DispatchQueue.main.async {
+                if !token.isEmpty {
+                    
+                    self?.loggedMessage?.text = token
+                    return
+                }
+                if !error.isEmpty {
+                    self?.loggedMessage?.text = error
+                }
+                
+            }
+            
+        
+        }
+        
+        viewModel?.login(user: user, password: password)
+        
+        
+        // 3.- Mostrar el token o el error devuelvo
+        //to show logged message true or false
+        
+    }
+}

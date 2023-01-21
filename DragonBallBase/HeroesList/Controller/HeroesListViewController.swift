@@ -40,7 +40,6 @@ class HeroesListViewController : UIViewController {
             self?.tableViewDataSource?.heroes = heroes
         }
         
-        setUpUpdateUI()
         getData()
         setUpTableDelegate()
         
@@ -48,9 +47,7 @@ class HeroesListViewController : UIViewController {
             
         }
         
-        func setUpUpdateUI(){
-            
-        }
+        
         
         func getData(){
             /* traer los datos: CALL API TO GET HERO LIST*/
