@@ -72,7 +72,7 @@ class LoginView : UIView {
         label.lineBreakMode = .byWordWrapping
         label.backgroundColor = .white
         label.textColor = .black
-        label.isHidden = false
+        //label.isHidden = false
         label.translatesAutoresizingMaskIntoConstraints = false /* muy importante siempre a false!!!*/
         return label
     }()
