@@ -70,9 +70,9 @@ class LoginView : UIView {
         label.textAlignment = .center
         label.numberOfLines = 5
         label.lineBreakMode = .byWordWrapping
-        label.backgroundColor = .white
+        label.backgroundColor = UIColor.clear
         label.textColor = .black
-        //label.isHidden = false
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false /* muy importante siempre a false!!!*/
         return label
     }()

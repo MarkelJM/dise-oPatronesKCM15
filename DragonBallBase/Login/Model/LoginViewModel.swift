@@ -11,10 +11,7 @@ class LoginViewModel : NSObject {
     //at begining the label must be hidden and once it is activated(after push login) must be shown
     var isLoggedLabelHidden: Bool = true
     
-    func showLoggedLabel() {
-            isLoggedLabelHidden = false
-        }
-    
+    var updateLoggedTextViewIsHidden: (()->Void)?
     
     override init() {
         
@@ -28,12 +25,19 @@ class LoginViewModel : NSObject {
             
             if let token = token {
                 self?.updateUI?(token, "")
+                //to show activated message
+                self?.isLoggedLabelHidden = false
+                self?.updateLoggedTextViewIsHidden?()
                 return
             }
             if let error = error {
                 self?.updateUI?("", error.localizedDescription)
+                //to show activated message
+                self?.isLoggedLabelHidden = false
+                self?.updateLoggedTextViewIsHidden?()
                 
             }
+          
         }
         
     }

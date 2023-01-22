@@ -49,6 +49,14 @@ class LoginViewController: UIViewController {
         viewModel = LoginViewModel()
         
         loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
+        
+        //to show active message login
+        viewModel?.updateLoggedTextViewIsHidden = {[weak self] in
+            DispatchQueue.main.async {
+                self?.mainView.loggedTextView.isHidden = self?.viewModel?.isLoggedLabelHidden ?? true
+            }
+        }
+
     }
     
    
@@ -59,18 +67,7 @@ class LoginViewController: UIViewController {
     func didLoginTapped(sender: UIButton) {
         
         // 1.- Capturar los valores de texto introducidos en para el email y la password
-        /*
-        guard let emailUser = emailTextfield?.text, !emailUser.isEmpty else {
-            // mostrar un error
-            print("\(emailTˇextfield) is not correct")
-            return
-        }
-        guard let passwordUser = passwordTextfield?.text, !passwordUser.isEmpty else {
-            // show error
-            print("\(passwordTextfield) is not correct")
-            return
-        }
-         */
+       
         
         guard let user = emailTextfield?.text else {
             print("Email field is required")
@@ -104,6 +101,7 @@ class LoginViewController: UIViewController {
         
         // 3.- Mostrar el token o el error devuelvo
         //to show logged message true or false
+        
         
     }
 }
